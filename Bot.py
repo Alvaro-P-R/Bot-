@@ -3,7 +3,7 @@ from time import sleep
 from selenium.common.exceptions import  ElementClickInterceptedException
 from selenium.webdriver.common.keys import Keys
 
-web = ("https://www.jesusninoc.com/powershell/page/4/")
+web = ("https://www.jesusninoc.com/powershell/page/2/")
 
 driver = webdriver.Chrome()
 driver.maximize_window()	
