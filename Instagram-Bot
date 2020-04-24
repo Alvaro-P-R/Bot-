@@ -1,0 +1,63 @@
+# SI NO FUNCIONA CORRECTAMENTE PRUEBA CABIAR SLEEP( ) 
+# ESTE "BOT" LO QUE HACE ES SEGUIR A TODAS LAS SUGERENCIAS 
+
+from selenium import  webdriver
+from time import sleep
+from selenium.common.exceptions import  ElementClickInterceptedException
+from selenium.common.exceptions import WebDriverException  
+
+# NOMBRE USUARIO
+username = (" ")
+# CONTRASEÑA 
+pw = (" ")
+
+
+driver = webdriver.Chrome()
+driver.maximize_window()    
+driver.get("https://www.instagram.com/")   
+
+sleep(1)
+
+
+driver.find_element_by_xpath("/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div[2]/div/label/input")\
+    .click()
+sleep(1)
+
+driver.find_element_by_xpath("/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div[2]/div/label/input")\
+      .send_keys(username)
+
+driver.find_element_by_xpath("/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div[3]/div/label/input")\
+      .click()
+
+driver.find_element_by_xpath("/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div[3]/div/label/input")\
+      .send_keys(pw)
+sleep(2)
+driver.find_element_by_xpath("/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div[4]/button/div")\
+      .click()
+sleep(3)
+driver.find_element_by_xpath("/html/body/div[4]/div/div/div[3]/button[2]")\
+      .click()
+sleep(2)
+driver.find_element_by_xpath("/html/body/div[1]/section/main/section/div[3]/div[3]/div[1]/a/div")\
+      .click()
+sleep(2)
+
+
+sleep(1)
+
+
+c = 1
+
+while c == 1:
+    a = driver.find_elements_by_xpath("//button[contains(text(), 'Seguir')]")
+
+    for i in a:
+        try:
+            i.click()
+        except ElementClickInterceptedException:
+            pass
+        
+        sleep(1)
+
+
+
